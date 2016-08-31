@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if session.logged_in %}
+<form action="{{ url_for('add_diary') }}" method=post class=add-diary>
+<dl>
+<dt>Title:
+<dd><input type=text size=30 name=title>
+<dt>Text:
+<dd><textarea name=text rows=5 cols=40></textarea>
+<dd><input type=submit value=Save>
+</dl>
+</form>
+{% endif %}
+<ul class=diaries>
+{% for diary in diaries %}
+<li><h5>{{ diary.date  }}</h5><h2>{{ diary.title }}</h2>{{ diary.text|safe }}
+{% else %}
+<li><em>Unbelievable. No diaries here so far</em>
+{% endfor %}
+</ul>
+{% endblock %}
