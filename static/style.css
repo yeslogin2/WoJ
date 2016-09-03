@@ -1,11 +1,11 @@
-body          { font-family: sans-serif; background: #eee; }
+body          { font-family: sans-serif; background-image: url(icemountain.jpg); }
 a, h1, h2     { color: #377BA8; }
 h1, h2        { font-family: 'Georgia', serif; margin: 0; }
 h1            { border-bottom: 2px solid #eee; }
 h2            { font-size: 1.2em; }
 .page
-{ margin: 2em auto; width: 35em; border: 5px solid #ccc;
-padding: 0.8em; background: white; }
+{ margin: 2em auto; width: 60em; border: 5px solid #008b8b;
+padding: 0.8em; background: white; margin-top: 8em; }
 .diaries
 { list-style: none; margin: 0; padding: 0; }
 .diaries li
@@ -16,10 +16,22 @@ padding: 0.8em; background: white; }
 .add-diary dl
 { font-weight: bold; }
 .metanav
-{ text-align: right; font-size: 0.8em; padding: 0.3em;
+{ text-align: right; font-size: 1.5em; padding: 0.3em;
 margin-bottom: 1em; background: #fafafa; }
 .flash
 { background: #CEE5F5; padding: 0.5em;
 border: 1px solid #AACBE2; }
 .error
-{ background: #F0D6D6; padding: 0.5em; }
+{ background: #F0D6D6; padding: 0.5em; width: 25em; }
+.entry
+{ margin-left: 1em; font-family: "Georgia"; }
+.slogan
+{ font-size: 1.5em; font-family: "Georgia"; color: #377ba8; }
+.logindiv
+{ float: right; position: relative; right: 15em; bottom: 7.5em;}
+.userprompt
+{ text-align: center; font-family: "Georgia"; color: #377ba8; position: relative; right: 2em; }
+.button
+{ margin: 0.3em; display: block; width: 5em; height: 1.6em; font-family: "Georgia"; background-color: #377ba8; color: #fff; border: 0; }
+.diarytitle
+{ margin: 0.3em; font-family: "Georgia"; color: #377ba8; position: relative; left: 2.7em; }

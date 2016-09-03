@@ -3,13 +3,14 @@
 {% if session.logged_in %}
 <form action="{{ url_for('add_diary') }}" method=post class=add-diary>
 <dl>
-<dt>Title:
-<dd><input type=text size=30 name=title>
-<dt>Text:
-<dd><textarea name=text rows=5 cols=40></textarea>
-<dd><input type=submit value=Save>
+<dt class="diarytitle">Title:
+<dd><input type=text size=40 name=title>
+<dt class="diarytitle">Today's Diary:
+<dd><textarea name=text rows=7 cols=50></textarea>
+<dd><input type=submit value=Save class="button">
 </dl>
 </form>
+<p class="blank">Your heart must be more than here, right?</p>
 {% endif %}
 <ul class=diaries>
 {% for diary in diaries %}

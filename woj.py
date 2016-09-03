@@ -60,7 +60,13 @@ def register():
         if username == None:
             error = 'What?! Do you want to register without Username?'
             return render_template('register.html', error=error)
+        if len(username.encode("utf-8")) > 30:
+            error = "Your name is tooooooo long!"
+            return render_template('register.html', error=error)
         password = request.form['password']
+        if len(password) < 6:
+            error = "Your passwrod is too short!"
+            return render_template('register.html', error=error)
         if password == None:
             error = 'Fuck up you stupid asshole! Do you want to register without Password?'
             return render_template('register.html', error=error)
@@ -86,7 +92,7 @@ def login():
         username = request.form['username']
         if username == '':
             error = 'What?! Do you want to login without Username?'
-            return render_template('login.html', error=error)
+            return render_template('login.html', error=error) 
         password = request.form['password']
         p_md5 = hashlib.md5()
         p_md5.update(password.encode('ascii'))
@@ -96,7 +102,7 @@ def login():
         if user == None:
             error = 'User not exists'
         elif password_md5 != user[1]:
-            error = 'Invalid password'
+            error = 'Password is not correct!'
         else:
             session['logged_in'] = True
             session['userId'] = user[2]
@@ -114,4 +120,4 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0")

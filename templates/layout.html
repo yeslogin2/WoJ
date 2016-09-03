@@ -5,14 +5,18 @@
 <h1>WoJ</h1>
 <div class=metanav>
 {% if not session.logged_in %}
-<a href="{{ url_for('login') }}">log in</a>
-<a href="{{ url_for('register') }}">register</a>
+<a href="{{ url_for('login') }}" class="entry">log in</a>
+<a href="{{ url_for('register') }}" class="entry">register</a>
 {% else %}
-<a href="{{ url_for('logout') }}">log out</a>
+<a href="{{ url_for('logout') }}" class="entry">log out</a>
 {% endif %}
 </div>
 {% for message in get_flashed_messages() %}
 <div class=flash>{{ message }}</div>
 {% endfor %}
+{% if not session.logged_in %}
+<p class="slogan">Cold  down in your heart.<p>
+<p class="slogan">Write down it here.      <p>
+{% endif %}
 {% block body %}{% endblock %}
 </div>
